@@ -1,0 +1,30 @@
+commands==>
+npm init ==>initiaite  package
+npm i express dotenv mongoose colors morgan  (packages)
+npm i -D nodemon concurrently
+
+Function Expression: This is when you define a function as part of an expression, such as assigning it to a variable or a property. In your example, you're using a function expression to assign an arrow function to exports.getTransactions.
+Function Declaration: This is a standalone function that is declared with the function keyword, like so:
+function getTransactions(req, res, next) {
+    res.send('Get Transactions');
+}
+exports.getTransactions = getTransactions;
+
+issues==>
+Fixing the Issues
+Use res.status() Instead of res.send() for Setting Status Codes:
+
+In your addTransactions method, you're using res.send(201) which is deprecated. You should use res.status(201) and then call .json() to send the response.
+Ensure Only One Response is Sent:
+
+Ensure that no other response is sent after res.status(...).json(...).
+
+======
+error
+=====
+findById  is updated to findByIdAndDelete
+
+adding both concurrently in json file==>
+
+   // "client" :"npm start --prefix expense_tracker ",
+    // "deb":"concurrently \"npm run server\"\"mpm run client\""
