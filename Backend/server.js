@@ -4,6 +4,7 @@ const colors=require('colors');
 const morgan=require('morgan')
 const transaction=require('./routes/transactions');
 const connectDB=require('./config/db')
+const cors=require('cors');
 dotenv.config({path:'./config/config.env'})
 
 
