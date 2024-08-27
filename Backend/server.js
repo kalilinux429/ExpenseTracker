@@ -6,16 +6,18 @@ const transaction=require('./routes/transactions');
 const connectDB=require('./config/db')
 dotenv.config({path:'./config/config.env'})
 
+
+
+ 
+const app=express();
+app.use(express.json());
+
 app.use(cors({
     origin: 'https://exptr.netlify.app/',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization']
   }));
-
- 
-const app=express();
-app.use(express.json());
 if(process.env.NODE_ENV === 'development'){
     app.use(morgan('dev'));
 }
