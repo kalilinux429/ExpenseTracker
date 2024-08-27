@@ -20,7 +20,7 @@ export const GlobalProvider=({children})=>{
     async function getTransactions() {
         try{
             const res=await axios.get('https://expensetracker-4-gnss.onrender.com/api/v1/transactions');
-            console.log(res.data.data)
+        
             dispatch({
                 type:'GET_TRANSACTION',
                 payload:res.data.data
