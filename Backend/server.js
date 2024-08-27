@@ -5,6 +5,14 @@ const morgan=require('morgan')
 const transaction=require('./routes/transactions');
 const connectDB=require('./config/db')
 dotenv.config({path:'./config/config.env'})
+
+app.use(cors({
+    origin: 'https://exptr.netlify.app/',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization']
+  }));
+
  
 const app=express();
 app.use(express.json());
