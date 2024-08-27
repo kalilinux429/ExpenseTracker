@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "npm start",
-    "start":"node server",
+    "start":"nodemon server.js",
     "server":"nodemon server",
     "client" :"npm start --prefix expense_tracker ",
     "deb":"concurrently \"npm run server\"\"mpm run client\""
