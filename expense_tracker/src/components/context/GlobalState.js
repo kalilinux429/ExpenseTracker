@@ -19,7 +19,7 @@ export const GlobalProvider=({children})=>{
     //
     async function getTransactions() {
         try{
-            const res=await axios.get('/api/v1/transactions');
+            const res=await axios.get('https://expensetracker-4-gnss.onrender.com/api/v1/transactions');
             console.log(res.data.data)
             dispatch({
                 type:'GET_TRANSACTION',
@@ -37,7 +37,7 @@ export const GlobalProvider=({children})=>{
     //Action
     async function deleteTransaction(id){
         try{
-            await axios.delete(`/api/v1/transactions/${id}`) 
+            await axios.delete(`https://expensetracker-4-gnss.onrender.com/api/v1/transactions/${id}`) 
            
         
         dispatch({
@@ -60,7 +60,7 @@ export const GlobalProvider=({children})=>{
         }
     }
          try{
-            const res=await axios.post('api/v1/transactions',transaction,config)
+            const res=await axios.post('https://expensetracker-4-gnss.onrender.com/api/v1/transactions',transaction,config)
         dispatch({
             type:'ADD_TRANSACTION',
             payload:res.data.data
